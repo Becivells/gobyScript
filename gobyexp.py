@@ -19,8 +19,7 @@ def lint_check(args):
         print("[+] check template %s style"%args.template)
 
         lintcmd = ["golangci-lint","run",args.template,
-                   # "--disable-all",
-                   "-D","typecheck",
+                   "--disable-all",
                    "--enable",
                    "asciicheck"
                    ",dogsled"
