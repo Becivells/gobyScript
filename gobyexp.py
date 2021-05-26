@@ -80,7 +80,8 @@ def run_POCEXP(args):
         "-mode", "runpoc",
         "-target", args.url,
         "-pocFile", args.template,
-        "-params", args.params
+        "-params", args.params,
+        "-godserver", args.godserver
     ]
     mode = "poc"
     if args.poc:
@@ -114,6 +115,7 @@ if __name__ == '__main__':
     pocexp.add_argument("--test", action='store_true', help="only print command and not execute")
     pocexp.add_argument("-u", "--url", type=str,  help="test target")
     pocexp.add_argument("-t", "--template", type=str, help="goby exp template")
+    pocexp.add_argument("-d", "--godserver", default='https://gobygo.net', help="default https://gobygo.net")
     pocexp.add_argument("-p", "--params", default='{"cmd":"whoami"}', help="default '{\"cmd\":\"whoami\"}' ")
     genpoc.add_argument("-g", "--genpoc", action='store_true', help="genpoc")
     genpoc.add_argument("-c", "--cveid", type=str, help="test url")
