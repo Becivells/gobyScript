@@ -81,8 +81,12 @@ def run_POCEXP(args):
         "-target", args.url,
         "-pocFile", args.template,
         "-params", args.params,
-        "-godserver", args.godserver
     ]
+
+    if args.godserver != "https://gobygo.net":
+        cmd.append("-godserver")
+        cmd.append(args.godserver)
+
     mode = "poc"
     if args.poc:
         cmd.append("-operation")
@@ -109,7 +113,7 @@ if __name__ == '__main__':
     pocexp = parser.add_argument_group("poc/exp","test poc or exp")
     group=pocexp.add_mutually_exclusive_group()
     parser.add_argument("--nolint",action='store_true',help="golangci-lint check default true")
-    parser.add_argument("--nofmt", action='store_true', help="gofmt code")
+    parser.add_argument("--nofmt", action='store_true', help="golangci-lint check default true")
     group.add_argument("--poc", action='store_true', help="poc mode")
     group.add_argument("--exp", action='store_true', help="exp mode")
     pocexp.add_argument("--test", action='store_true', help="only print command and not execute")
@@ -160,6 +164,9 @@ if __name__ == '__main__':
 
     if os.environ.get("goby_params"):
         args.params =os.environ.get("goby_params")
+
+    if os.environ.get("godserver"):
+        args.godserver =os.environ.get("godserver")
 
     if not args.poc and not args.exp:
         print("[-] the following arguments are required: --poc/--exp ")

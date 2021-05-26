@@ -109,6 +109,7 @@ gobyexp -u http://target:port -t pocfile.go  --poc --test
 如果有环境变量则按照环境变量来
 
 ```
+godserver   # 暂无用途
 goby_params # 用于exp执行的时候传值
 goby_proxy  # 用于获取cve信息时候的代理地址
 ```
