@@ -135,6 +135,7 @@ if __name__ == '__main__':
             print("[+] use templates %s" % (args.template))
         elif len(tfile) >= 1:
             print("[-] templates more than one,please use -t/--templates")
+            sys.exit(1)
         else:
             print("[-] not find template please change dir or use: -t/--templates")
             sys.exit(1)
