@@ -2,7 +2,7 @@
 
 
 
-`goby-cmd` 的图形界面测试太麻烦，命令行测试poc的参数太长，也太麻烦，提交的时候需要按照一定的格式。附带测试的案例。此工具提供了代码格式化(需要安装[go](https://studygolang.com/dl) 并且设置环境变量)，代码检查(需要安装[golangci](https://golangci-lint.run/usage/install/#local-installation)), 还有测试。
+`goby-cmd` 的图形界面测试太麻烦，命令行测试poc的参数太长，也太麻烦，提交的时候需要按照一定的格式。附带测试的案例。此工具提供了代码格式化(需要安装 [go](https://studygolang.com/dl) 并且设置环境变量)，代码检查(需要安装 [golangci](https://golangci-lint.run/usage/install/#local-installation)), 还有测试。
 
 ## 示例
 
@@ -115,7 +115,7 @@ goby_proxy  # 用于获取cve信息时候的代理地址
 ```
 
 ## 注意事项
-编写时请加入`//nolint`
+编写时请加入`//nolint` 模板自动生成的导入gobypoc 不需要加入
 ```shell script
 ExpManager.AddExploit(NewExploit( //nolint
 ```
